@@ -32,32 +32,32 @@
     </div>
 
     <div class=" pt-4 grid grid-cols-3   gap-3 ">
-        <div id="add-money-btn"  class="border-3 border-gray-300 text-center p- rounded-lg ">
+        <div id="add-money-btn"  class="form-btn  border-3 border-gray-300 text-center p- rounded-lg ">
             <img class="mx-auto" src="./assets/wallet1.png" alt="">
             <h1>Add Money</h1>
 
         </div>
-        <div id="cash-out-btn" class="border-3 border-gray-300 text-center p-3 rounded-lg">
+        <div id="cash-out-btn" class="form-btn border-3 border-gray-300 text-center p-3 rounded-lg">
             <img class="mx-auto" src="./assets/send1.png" alt="">
             <h1>Cashout</h1>
 
         </div>
-        <div id="transfer-money-btn" class="border-3 border-gray-300 text-center p-3 rounded-lg">
+        <div id="transfer-money-btn" class=" form-btn border-3 border-gray-300 text-center p-3 rounded-lg">
             <img class="mx-auto" src="./assets/money1.png" alt="">
             <h1>Transfer Money</h1>
 
         </div>
-        <div id="bonus-btn" class="border-3 border-gray-300 text-center p-3 rounded-lg">
+        <div id="bonus-btn" class="form-btn border-3 border-gray-300 text-center p-3 rounded-lg">
             <img class="mx-auto" src="./assets/bonus1.png" alt="">
             <h1>Get Bonus</h1> 
 
         </div>
-        <div id="pay-bill" class="border-3 border-gray-300 text-center p-3 rounded-lg">
+        <div id="pay-bill" class="form-btn border-3 border-gray-300 text-center p-3 rounded-lg">
             <img class="mx-auto" src="./assets/purse1.png" alt="">
             <h1>Pay Bill</h1>
 
         </div>
-        <div class="border-3 border-gray-300 text-center p-3 rounded-lg">
+        <div class="form-btn border-3 border-gray-300 text-center p-3 rounded-lg">
             <img class="mx-auto" src="./assets/transaction1.png" alt="">
             <h1>Transaction</h1>
 
@@ -67,7 +67,7 @@
 
 <!-- FOrm -->
  <!-- Add money -->
- <div id="add-money-parent" class="all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
+ <div id="add-money-parent" class="form all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
     <h1 class="font-bold text-xl mb-3">Add Money</h1>
   <form class="  bg-[#FFF] rounded-2xl p-8">
    
@@ -94,12 +94,12 @@
      <label class="font-semibold" for="">Pin Number</label><br>
             <input id="add-pin" type="password" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7;] mt-3 rounded-3xl w-full" >
    </div>
-   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" type="button">Add Money</button>
+   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" >Add Money</button>
    </form>
    
  </div>
   <!-- Cash-out -->
- <div id="cash-out-parent" style="display:none ;"class="all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
+ <div id="cash-out-parent" style="display:none ;"class="form all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
     <h1 class="font-bold text-xl mb-3">Cash out</h1>
   <form class="  bg-[#FFF] rounded-2xl p-8">
     
@@ -113,14 +113,14 @@
    </div>
    <div class="mt-2">
      <label class="font-semibold" for="">Pin Number</label><br>
-            <input id="add-pin" type="password" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7;] mt-3 rounded-3xl w-full" >
+            <input id="add-cashout-pin" type="password" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7;] mt-3 rounded-3xl w-full" >
    </div>
-   <button id="withdrow-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" type="button">withdraw money<button>
+   <button id="withdrow-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" >withdraw money<button>
    </form>
    
  </div>
  <!-- Transfer money -->
- <div id="Transfer-money-parent" style="display:none ;"class="all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
+ <div id="Transfer-money-parent" style="display:none ;"class=" form all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
     <h1 class="font-bold text-xl mb-3">Transfer Money</h1>
   <form class="  bg-[#FFF] rounded-2xl p-8">
     
@@ -136,12 +136,12 @@
      <label class="font-semibold" for="">Pin Number</label><br>
             <input id="add-pin" type="password" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7;] mt-3 rounded-3xl w-full" >
    </div>
-   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" type="button">withdraw money<button>
+   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" >withdraw money<button>
    </form>
    
  </div>
  <!-- Get Bonus -->
-   <div id="Get-bonus-parent" style="display:none ;"class="all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
+   <div id="Get-bonus-parent" style="display:none ;"class="form all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
     <h1 class="font-bold text-xl mb-3">Get Bonus</h1>
   <form class="  bg-[#FFF] rounded-2xl p-8">
     
@@ -150,14 +150,14 @@
             <input id="account-num" type="text" placeholder="Enter your coupon" class="input bg-[#f4f5f7;] mt-3 rounded-3xl w-full" >
    </div>
   
-   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" type="button">Get Bonus<button>
+   <button id="Add-Money-btn" class="btn bg-[#0874F2] text-white mt-4 w-full rounded-3xl" >Get Bonus<button>
    </form>
    
  </div>
 
  <!-- Pay-Bill -->
 
- <div id="pay-bill-parent"style="display:none ;" class="all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
+ <div id="pay-bill-parent"style="display:none ;" class=" form all-form-section max-w-lg mx-auto pt-16 min-w-[350px]">
     <h1 class="font-bold text-xl mb-3">Pay Bill</h1>
   <form class="  bg-[#FFF] rounded-2xl p-8">
    

@@ -1,17 +1,35 @@
 const validPin =1234
 
+
+ //function to get input values
+function getInputValueNumber(id){
+    const InputFieldValueNumber = parseInt(document.getElementById(id).value)
+    return InputFieldValueNumber
+}
+//function to get  innertext
+function getInnerText(id){
+    const elementValuesNumber = parseInt(document.getElementById(id).innerText)
+    return elementValuesNumber
+}
+// function to set InnerText
+function setInnerText(value){
+    const availlableBalance = document.getElementById("Availlable-balance").innerText =value
+    return availlableBalance
+}
+
+//add money function
 document.getElementById('Add-Money-btn').addEventListener('click',function(e){
     e.preventDefault()
     
     const bank = document.getElementById('bank').value
 
-    const accountNum =document.getElementById('account-num').value
+    const accountNum = getInputValueNumber ('account-num')
 
-    const addAmount = parseInt(document.getElementById('add-amount').value)
+    const addAmount =  getInputValueNumber ('add-amount') 
 
-    const addPin =parseInt(document.getElementById('add-pin').value)
+    const addPin = getInputValueNumber ('add-pin') 
 
-    const availlableBalance = parseInt(document.getElementById('Availlable-balance').innerText);
+    const availlableBalance =getInnerText('Availlable-balance') 
 
 
     if(accountNum.length <11){
@@ -25,60 +43,113 @@ document.getElementById('Add-Money-btn').addEventListener('click',function(e){
     }
 
     const totalNewAvaillableBalance= addAmount + availlableBalance;
-  document.getElementById('Availlable-balance').innerText = totalNewAvaillableBalance
-    
+  
+    setInnerText(totalNewAvaillableBalance)
 })
 
 /* CashOut feature */
 document.getElementById('withdrow-Money-btn').addEventListener('click',function(e){
     e.preventDefault()
-    const AgentBank =parseInt(document.getElementById('agent-account-num').value)
-    const amount = document.getElementById('sub-amount').value
-     const availlableBalance = parseInt(document.getElementById('Availlable-balance').innerText);
-     if(AgentBank<11){
-        alert("Please Enter 11 Digit Number")
+    const AgentBank =getInputValueNumber('agent-account-num') 
+
+    const amount =getInputValueNumber('sub-amount') 
+  
+     const addPin = getInputValueNumber ('add-cashout-pin')
+
+      const availlableBalance =getInnerText('Availlable-balance') 
+     
+     if(AgentBank.length <11){
+        alert('please valid number')
         return
-     }
-         if(addPin !== validPin){
+    }
+
+    if(addPin !== validPin){
         alert('please provide valid pin Number')
         return
     }
 
-      const totalNewAvaillableBalance=  availlableBalance - amount;
+     const totalNewAvaillableBalance=  availlableBalance - amount;
        
-     document.getElementById('Availlable-balance').innerText = totalNewAvaillableBalance
+     setInnerText(totalNewAvaillableBalance)
 })
-
+//function to toggole
+function handleToggle(id){
+    const forms = document.getElementsByClassName("form")
+    for(const form of forms){
+        form.style.display ="none"
+    }
+    document.getElementById(id).style.display="block"
+}
 /* toogoling Feature */
-document.getElementById('add-money-btn').addEventListener('click',function(){
-    document.getElementById('cash-out-parent').style.display ="none"
-    document.getElementById('add-money-parent').style.display ="block"
-    document.getElementById('Transfer-money-parent').style.display ="none"
-    document.getElementById('Get-bonus-parent').style.display ="none"
+document.getElementById('add-money-btn').addEventListener('click',function(e){
+ 
+     handleToggle('add-money-parent')
+
+     const formBtns =document.getElementsByClassName("form-btn")
+     
+     for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+     }
+     document.getElementById("add-money-btn").classList.remove("border-gray-300")
+     document.getElementById("add-money-btn").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+  
 })
 document.getElementById('cash-out-btn').addEventListener('click',function(){
-    document.getElementById('add-money-parent').style.display ='none'
-    document.getElementById('cash-out-parent').style.display ='block'
-    document.getElementById('Transfer-money-parent').style.display ="none"
-    document.getElementById('Get-bonus-parent').style.display ="none"
+
+        handleToggle('cash-out-parent')
+
+    const formBtns =document.getElementsByClassName('form-btn')
+     
+     for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+     }
+     document.getElementById("cash-out-btn").classList.remove("border-gray-300")
+     document.getElementById("cash-out-btn").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+
+
 })
 document.getElementById('transfer-money-btn').addEventListener('click',function(){
-    document.getElementById('add-money-parent').style.display ='none'
-    document.getElementById('cash-out-parent').style.display ='none'
-    document.getElementById('Transfer-money-parent').style.display ="block"
-    document.getElementById('Get-bonus-parent').style.display ="none"
+       handleToggle('Transfer-money-parent')
+
+    const formBtns =document.getElementsByClassName('form-btn')
+     
+     for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+     }
+     document.getElementById("transfer-money-btn").classList.remove("border-gray-300")
+     document.getElementById("transfer-money-btn").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+ 
 })
 document.getElementById('bonus-btn').addEventListener('click',function(){
-   
-    document.getElementById('add-money-parent').style.display ='none'
-    document.getElementById('cash-out-parent').style.display ='none'
-    document.getElementById('Transfer-money-parent').style.display ="none"
-    document.getElementById('Get-bonus-parent').style.display ="block"
+
+    handleToggle('Get-bonus-parent')
+
+    
+    const formBtns =document.getElementsByClassName('form-btn')
+     
+     for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+     }
+     document.getElementById("bonus-btn").classList.remove("border-gray-300")
+     document.getElementById("bonus-btn").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+    
 })
-document.getElementById('pay-bill').addEventListener( 'click',function(){
-     document.getElementById('add-money-parent').style.display ='none'
-    document.getElementById('cash-out-parent').style.display ='none'
-    document.getElementById('Transfer-money-parent').style.display ="none"
-    document.getElementById('Get-bonus-parent').style.display ="none"
-    document.getElementById('pay-bill-parent').style.display ="block"
+document.getElementById('pay-bill').addEventListener('click',function(){
+
+    handleToggle('pay-bill-parent')
+    
+    const formBtns =document.getElementsByClassName('form-btn')
+     
+     for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+     }
+     document.getElementById("pay-bill").classList.remove("border-gray-300")
+     document.getElementById("pay-bill").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+    
+    
 })
